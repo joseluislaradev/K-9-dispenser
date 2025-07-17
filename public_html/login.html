@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Inicia Sesión o Registrate</title>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+	<link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'><link rel="stylesheet" href="assets/css/styleLogin.css">
+	<meta name="author" content="JoseLuisArredondoLara, EduardoVargasVaca, JonathanLopezMendez">
+
+	<!--Para validar strim-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!--Logo del titulo-->
+	<link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+
+</head>
+<div>
+
+<!-- partial:index.partial.html -->
+<a href="#" class="logo" target="_blank">
+		<img src="assets/images/perritoElegante.png" alt="">
+	</a>
+
+
+
+	<div class="position-absolute top-0 start-0 p-2" style="background-color: red; color: white; font-style: italic;">
+		DEMO
+	</div>
+
+	<div class="section">
+		<div class="container">
+			<div class="row full-height justify-content-center">
+				<div class="col-12 text-center align-self-center py-5">
+					<div class="section pb-5 pt-5 pt-sm-2 text-center">
+						<br/><br/>
+						<h6 class="mb-0 pb-3"><span>Iniciar Sesión </span><span>Registrarse</span></h6>
+			          	<input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+			          	<label for="reg-log"></label>
+						<div class="card-3d-wrap mx-auto">
+							<div class="card-3d-wrapper">
+								<div class="card-front">
+									<div class="center-wrap">
+										<div class="section text-center">
+
+											<!--Formulario de inicio de sesion-->
+											<h4 class="mb-4 pb-3">Inicio de Sesión</h4>
+											<form action="../Controlador/validarSesion.php" method="post">
+												<div class="form-group">
+													<input type="email" name="logemail" class="form-style" placeholder="Correo" id="logemail" autocomplete="off" required>
+													<i class="input-icon uil uil-at"></i>
+												</div>	
+												<div class="form-group mt-2">
+													<input type="password" name="logpass" class="form-style" placeholder="Contraseña" id="logpass" autocomplete="off" required>
+													<i class="input-icon uil uil-lock-alt"></i>
+												</div>
+												<button type="submit" class="btn mt-4">Ingresar</button>
+												<div class="mt-4 p-2 align" style="background-color: rgb(184, 0, 0);">
+													<p  style="color: white;">PUEDES ENTRAR AL SISTEMA CON LAS SIGUEINTES CREDENCIALES:</p>
+													
+													<p style="color: white;">administrador@gmail.com</p>
+													<p style="color: white;"> k9admin</p>
+
+												</div>
+
+											</form>
+				      					</div>
+			      					</div>
+			      				</div>
+								<div class="card-back">
+									<div class="center-wrap">
+										<div class="section text-center">
+
+											<!--Formulario de registro-->
+											<h4 class="mb-4 pb-3">Registro</h4>
+											<form action="../Controlador/guardaRegistroUsuario.php" method="post" name="f1" id="f1">
+												<div class="form-group mt-2">
+													<input type="text" name="nombre" class="form-style" placeholder="Tu nombre" id="nombre" autocomplete="off" required>
+													<i class="input-icon uil uil-user"></i>
+												</div>	
+												<div class="form-group mt-2">
+													<input type="text" name="apellidoP" class="form-style" placeholder="Apellido Paterno" id="apellidoP" autocomplete="off" required>
+													<i class="input-icon uil uil-user"></i>
+												</div>	
+												<div class="form-group mt-2">
+													<input type="text" name="apellidoM" class="form-style" placeholder="Apellido Materno" id="apellidoM" autocomplete="off" required>
+													<i class="input-icon uil uil-user"></i>
+												</div>	
+												<div class="form-group mt-2">
+													<input type="email" name="email" class="form-style" placeholder="Email" id="email" autocomplete="off" required>
+													<i class="input-icon uil uil-at"></i>
+												</div>	
+												<div class="form-group mt-2">
+													<input type="password" name="contraseña" class="form-style" placeholder="Ingresa una contraseña" id="contraseña" autocomplete="off" minlength="8" maxlength="18" pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" required title="Tu contraseña debe: 
+- Comenzar con una letra
+- Usar al menos una letra minúscula
+- Usar al menos una letra mayúscula
+- Tener minimo 8 caracteres
+- Tener maximo 18 caracteres
+- Tener un carácter numerico"/>
+													<i class="input-icon uil uil-lock-alt"></i>
+												</div>
+												<div class="form-group mt-2">
+													<input type="password" name="contraseñaConfirmacion" class="form-style" placeholder="Confirma tu contraseña" id="contraseñaConfirmacion" autocomplete="off" />
+													<i class="input-icon uil uil-lock-alt"></i>
+												</div>
+
+												</br>
+
+												<input type="button" value="ENVIAR" onClick="comprobarClave()" class="btn mt-4">
+												<input type="submit" name = "enviar" id="enviar" class="boton" hidden>
+											</form>
+				      					</div>
+			      					</div>
+			      				</div>
+			      			</div>
+			      		</div>
+			      	</div>
+		      	</div>
+	      	</div>
+	    </div>
+	</div>
+
+
+	<script>
+		//Da clic automaticamente al boton submit invisible 
+		function clickButton() {
+			document.querySelector('#enviar').click();
+		}
+
+		//Comprueba las contraseñas
+		function comprobarClave() {
+		  clave1 = document.f1.contraseña.value;
+		  clave2 = document.f1.contraseñaConfirmacion.value;
+	
+		  if (clave1 == clave2) {
+			//Valida que los input no esten lleno de espacios
+			if (!($("#nombre").val().trim().length > 2 )) {
+				alert("Por favor ingresa un nombre valido");
+			} else if (!($("#apellidoP").val().trim().length > 2 )) {
+				alert("Por favor ingresa un apellido paterno valido");
+			} else if (!($("#apellidoM").val().trim().length > 2 )) {
+				alert("Por favor ingresa un apellido materno valido");
+			} else  {
+				clickButton();
+			}
+		  } else {
+			alert("Las dos contraseñas ingresadas son diferentes, favor de verificarlas");
+		  }
+		}
+	  </script>
+
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
