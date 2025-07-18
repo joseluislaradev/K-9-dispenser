@@ -3,7 +3,7 @@
 Aplicación web en **PHP puro** para simular el control de un dispensador de alimento para mascotas.  
 Este proyecto sirvió para establecer una base sólida en desarrollo backend, gestión de bases de datos y autenticación de usuarios.
 
-> ![Captura del proyecto](ruta/a/tu/captura.png)
+> ![Captura del proyecto](PantallaPrincipalk-9.png)
 
 ---
 
