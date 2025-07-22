@@ -76,7 +76,7 @@ Para ejecutar este proyecto en tu propia máquina, sigue estos pasos:
 
 Puedes probar una versión en vivo de este proyecto desplegada en **InfinityFree**.
 
-- **URL:** [http://tu-proyecto.epizy.com/k9dispenser/]()  
+- **URL:** [k9dispenser.infy.ukr/]()  
 - **Usuario de prueba:** `demo`  
 - **Contraseña:** `k9admin`
 
